@@ -4,7 +4,7 @@ app.controller('AddDataCtrl', function($scope, forms) {
     $scope.$watch('searchBar', function() {
         $scope.filteredForms = $scope.originalForms;
         if ($scope.searchBar) {
-            var reg = new RegExp($scope.searchBar, 'i');
+            let reg = new RegExp($scope.searchBar, 'i');
             $scope.filteredForms = $scope.filteredForms.filter(function(form) {
                 return reg.test(form.title);
             });
@@ -27,7 +27,7 @@ app.controller('AddDataSubmitCtrl', function($scope, form, CompletedFormsFactory
 	$scope.submitForm = function() {
 		// merge values with the formTemplate data and save as completed form
 
-		var completedForm = angular.copy(form);
+		let completedForm = angular.copy(form);
 		completedForm.formElements = completedForm.formElements.map(function(el, i) {
 			el.value = $scope.formValues[i];
 			return el;
@@ -40,7 +40,7 @@ app.controller('AddDataSubmitCtrl', function($scope, form, CompletedFormsFactory
 
 		CompletedFormsFactory.createOne(completedForm)
 			.then(function(createdForm) {
-				var modalInstance = $uibModal.open({
+				let modalInstance = $uibModal.open({
 					templateUrl: '/js/add-data/add-data-success.html',
 					controller: 'CompletedFormModalCtrl',
 					size: 'md'

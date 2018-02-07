@@ -11,7 +11,7 @@ app.controller('FormTemplatesCtrl', function($scope, forms, FormTemplatesFactory
     $scope.$watch('searchBar', function() {
         $scope.filteredForms = $scope.originalForms;
         if ($scope.searchBar) {
-            var reg = new RegExp($scope.searchBar, 'i');
+            let reg = new RegExp($scope.searchBar, 'i');
             $scope.filteredForms = $scope.filteredForms.filter(function(form) {
                 return reg.test(form.title);
             });

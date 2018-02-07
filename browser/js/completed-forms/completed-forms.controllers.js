@@ -2,7 +2,7 @@ app.controller('CompletedFormsListCtrl', function($scope, forms, formTemplate) {
     $scope.completedForms = forms;
     $scope.formTemplate = formTemplate;
 
-    //variables for pagination 
+    //letiables for pagination 
     $scope.currentPage = 1;
     $scope.maxSize = 5;
     $scope.filteredForms = $scope.completedForms;
@@ -25,10 +25,10 @@ app.controller('CompletedFormsListCtrl', function($scope, forms, formTemplate) {
     $scope.changes = function () {
         $scope.filteredForms = $scope.completedForms;
         if ($scope.searchInd) {
-            var reg = new RegExp($scope.searchInd, 'i');
+            let reg = new RegExp($scope.searchInd, 'i');
             $scope.filteredForms = $scope.filteredForms.filter(function(form) {
                 for (let i = 0; i < form.formElements.length; i++) {
-                    var val = form.formElements[i].value;
+                    let val = form.formElements[i].value;
                     if (Array.isArray(val)) {
                         for (let j = 0; j < val.length; j++) {
                             if (reg.test(val[j])) return true;
@@ -72,7 +72,7 @@ app.controller('CompletedFormsCtrl', function($scope, allFormTemplates) {
     $scope.$watch('searchBar', function() {
         $scope.filteredForms = $scope.originalForms;
         if ($scope.searchBar) {
-            var reg = new RegExp($scope.searchBar, 'i');
+            let reg = new RegExp($scope.searchBar, 'i');
             $scope.filteredForms = $scope.filteredForms.filter(function(form) {
                 return reg.test(form.title);
             });

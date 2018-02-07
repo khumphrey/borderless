@@ -1,11 +1,8 @@
 'use strict';
-var path = require('path');
-var express = require('express');
-var app = express();
+let path = require('path');
+let express = require('express');
+let app = express();
 module.exports = app;
-
-var path = require('path');
-
 
 app.get('/sw.js', function(req, res) {
     res.sendFile(path.resolve(__dirname + '/../../sw.js'));

@@ -1,6 +1,6 @@
 'use strict';
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+let cookieParser = require('cookie-parser');
+let bodyParser = require('body-parser');
 
 module.exports = function (app) {
 

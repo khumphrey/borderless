@@ -12,7 +12,7 @@ angular.module('completedFormsFilters', [])
 				input = input.join(", ");
 			} else input = input.toString();
 
-			var n = input.length > 30 ? 30 : input.length;
+			let n = input.length > 30 ? 30 : input.length;
 			return input.slice(0, n);
 		};
 	});

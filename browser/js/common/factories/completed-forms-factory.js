@@ -1,5 +1,5 @@
 app.factory('CompletedFormsFactory', function(DatabaseFactory) {
-	var db = DatabaseFactory.getLocalDb();
+	let db = DatabaseFactory.getLocalDb();
 
 	return {
 		fetchAll: function(templateId) {

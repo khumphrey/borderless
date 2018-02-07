@@ -1,6 +1,6 @@
 app.factory("SyncFactory", function(DatabaseFactory) {
-    var db = DatabaseFactory.getLocalDb();
-    var remoteDb = DatabaseFactory.getRemoteDb();
+    let db = DatabaseFactory.getLocalDb();
+    let remoteDb = DatabaseFactory.getRemoteDb();
 
     return {
 
@@ -21,14 +21,14 @@ app.factory("SyncFactory", function(DatabaseFactory) {
             return DatabaseFactory.getLocalDb().allDocs({ include_docs: true })
                 .then(function(docs) {
 
-                    var groupedCompleted = _.groupBy(docs.rows.filter(function(row) {
+                    let groupedCompleted = _.groupBy(docs.rows.filter(function(row) {
                         return row.doc.type === "completedForm";
                     }).map(function(row) {
                         return row.doc }), function(doc) {
                         return doc.formTemplateId;
                     })
 
-                    var formTemplates = docs.rows.filter(function(row) {
+                    let formTemplates = docs.rows.filter(function(row) {
                         return row.doc.type === "formTemplate";
                     }).map(function(row) {
                         return row.doc;

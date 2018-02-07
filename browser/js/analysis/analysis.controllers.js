@@ -9,7 +9,7 @@ app.controller('AnalysisCtrl', function($scope, forms, CompletedFormsFactory, Da
     $scope.series = [];
 
     $scope.scourForms = function(forms, soughtItem) {
-        var result = {};
+        let result = {};
         forms.forEach(function(form) {
             form.formElements.forEach(function(element) {
                 if (element[soughtItem]) {
@@ -30,7 +30,7 @@ app.controller('AnalysisCtrl', function($scope, forms, CompletedFormsFactory, Da
 $scope.resultFilter = function(form, firstDrillDown, drillDownValue) {
   if (!firstDrillDown) return true;
   if (firstDrillDown === 'Nearest Village') firstDrillDown = 'Address';
-    var match = false;
+    let match = false;
     form.formElements.forEach(function(elem) {
         if (elem.label === firstDrillDown) {
             if (typeof elem.value === 'object') {
@@ -42,7 +42,7 @@ $scope.resultFilter = function(form, firstDrillDown, drillDownValue) {
                     if (firstDrillDown === 'Address') {
                         if (elem.value.city == drillDownValue) match = true;
                     } else {
-                      for (var key in elem.value) {
+                      for (let key in elem.value) {
                         if (elem.value[key] == drillDownValue) match = true;
                       }
                     }
@@ -62,7 +62,7 @@ $scope.resultFilter = function(form, firstDrillDown, drillDownValue) {
       if (soughtLabel === 'Nearest Village') soughtLabel = 'Address';
         CompletedFormsFactory.fetchAll($scope.currentForm)
             .then(function(forms) {
-                var result = [];
+                let result = [];
                 forms.forEach(function(form) {
                     form.formElements.forEach(function(element) {
                         if (element.label && element.label === soughtLabel) {
@@ -76,7 +76,7 @@ $scope.resultFilter = function(form, firstDrillDown, drillDownValue) {
                                 if (element.label === 'Address') {
                                   result.push(element.value.city);
                                 } else {
-                                  for (var key in element.value) {
+                                  for (let key in element.value) {
                                     result.push(element.value[key]);
                                   }
                                 }
@@ -90,7 +90,7 @@ $scope.resultFilter = function(form, firstDrillDown, drillDownValue) {
                 });
                 return result;
             }).then(function(result) {
-                var labelsDataObject = {};
+                let labelsDataObject = {};
                 $scope.labels = [];
                 if (!options) {
                   if ($scope.chartOptions === 'bar graph') $scope.data = [
@@ -105,7 +105,7 @@ $scope.resultFilter = function(form, firstDrillDown, drillDownValue) {
                         labelsDataObject[value] = 1;
                     }
                 });
-                for (var key in labelsDataObject) {
+                for (let key in labelsDataObject) {
                     if (options) {
                       $scope.drillDownValues.push(key);
                     } else {

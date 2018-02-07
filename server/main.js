@@ -1,17 +1,17 @@
 'use strict';
-var chalk = require('chalk');
+let chalk = require('chalk');
 
 // Create a node server instance! cOoL!
-var server = require('http').createServer();
+let server = require('http').createServer();
 
-var createApplication = function () {
-    var app = require('./app');
+let createApplication = function () {
+    let app = require('./app');
     server.on('request', app); // Attach the Express application.
 };
 
-var startServer = function () {
+let startServer = function () {
 
-    var PORT = process.env.PORT || 1337;
+    let PORT = process.env.PORT || 1337;
 
     server.listen(PORT, function () {
         console.log(chalk.blue('Server started on port', chalk.magenta(PORT)));

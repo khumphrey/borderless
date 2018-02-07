@@ -1,12 +1,12 @@
 
 app.factory('AuthFactory', function(DatabaseFactory) {
-	var remoteDb = DatabaseFactory.getRemoteDb();
-	var usersDb = DatabaseFactory.getUsersDb();
+	let remoteDb = DatabaseFactory.getRemoteDb();
+	let usersDb = DatabaseFactory.getUsersDb();
 
 	return {
 		login: function(loginInfo) {
-			var masterUser;
-			var localUser;
+			let masterUser;
+			let localUser;
 
 			// Logging in has multiple steps
 			// 1. Login the user
@@ -31,7 +31,7 @@ app.factory('AuthFactory', function(DatabaseFactory) {
 
 	            	// console.log('localUser: ', localUser)
 
-	            	var localUserRev = localUser._rev;
+	            	let localUserRev = localUser._rev;
 	            	localUser = masterUser;
 	            	localUser._rev = localUserRev;
 
@@ -53,7 +53,7 @@ app.factory('AuthFactory', function(DatabaseFactory) {
 
 	            	return db.put(currentUser);
 	            }, function(error) {
-	            	var currentUser = {_id: 'currentUser', name: localUser.name};
+	            	let currentUser = {_id: 'currentUser', name: localUser.name};
 	            	// console.log('currentUser in ca d e y: ', currentUser)
 
 	            	return db.put(currentUser);

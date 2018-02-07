@@ -1,15 +1,15 @@
 'use strict';
-var passport = require('passport');
-var _ = require('lodash');
-var LocalStrategy = require('passport-local').Strategy;
-var mongoose = require('mongoose');
-var User = mongoose.model('User');
+let passport = require('passport');
+let _ = require('lodash');
+let LocalStrategy = require('passport-local').Strategy;
+let mongoose = require('mongoose');
+let User = mongoose.model('User');
 
 module.exports = function (app) {
 
     // When passport.authenticate('local') is used, this function will receive
     // the email and password to run the actual authentication logic.
-    var strategyFn = function (email, password, done) {
+    let strategyFn = function (email, password, done) {
         User.findOne({ email: email })
             .then(function (user) {
                 // user.correctPassword is a method from the User schema.
@@ -29,12 +29,12 @@ module.exports = function (app) {
     // A POST /login route is created to handle login.
     app.post('/login', function (req, res, next) {
 
-        var authCb = function (err, user) {
+        let authCb = function (err, user) {
 
             if (err) return next(err);
 
             if (!user) {
-                var error = new Error('Invalid login credentials.');
+                let error = new Error('Invalid login credentials.');
                 error.status = 401;
                 return next(error);
             }

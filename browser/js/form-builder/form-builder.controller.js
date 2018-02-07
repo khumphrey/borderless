@@ -57,7 +57,7 @@ app.controller('FormBuilder', function($scope, FormTemplatesFactory, formTemplat
     };
 
     $scope.removeElement = function(e) {
-        var indexToRemove = $scope.formElements.indexOf(e);
+        let indexToRemove = $scope.formElements.indexOf(e);
         $scope.formElements.splice(indexToRemove, 1);
         $scope.selected = {};
     };
@@ -68,7 +68,7 @@ app.controller('FormBuilder', function($scope, FormTemplatesFactory, formTemplat
         $scope.selected = {};
     };
 
-    var nextId = $scope.formElements.length + 1;
+    let nextId = $scope.formElements.length + 1;
 
     $scope.addChoice = function(element) {
         element.options.push({ value: "New Option" });

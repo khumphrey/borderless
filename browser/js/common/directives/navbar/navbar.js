@@ -56,13 +56,13 @@ app.directive('navbar', function ($rootScope, AuthFactory, $state) {
             //     });
             // };
 
-            // var setUser = function () {
+            // let setUser = function () {
             //     AuthService.getLoggedInUser().then(function (user) {
             //         scope.user = user;
             //     });
             // };
 
-            // var removeUser = function () {
+            // let removeUser = function () {
             //     scope.user = null;
             // };
 

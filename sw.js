@@ -1,9 +1,9 @@
-this.addEventListener('install', function(event) {
-
+self.addEventListener('install', function(event) {
 	console.log('installing')
-	event.waitUntil(self.skipWaiting());
+// 	event.waitUntil(self.skipWaiting());
 	event.waitUntil(
 		caches.open('v1').then(function(cache) {
+			console.log('caching')
 			return cache.addAll([
 				'/',
 
@@ -14,10 +14,10 @@ this.addEventListener('install', function(event) {
 				'/admin-lte/dist/css/AdminLTE.min.css',
 				'/admin-lte/dist/css/skins/skin-blue.min.css',
 				'/admin-lte/bootstrap/js/bootstrap.min/js',
-				'/admin-lte/plugins/jQuery/jQuery-2.2.0.min.js',
-				'/admin-lte/dist/js/app.min.js',
+				'/admin-lte/plugins/jQueryUI/jQuery-ui.min.js',
+				'/admin-lte/dist/js/adminlte.min.js',
 				'/admin-lte/dist/img/avatar3.png',
-				'/admin-lte/bootstrap/js/bootstrap.min.js',
+				// '/admin-lte/bootstrap/js/bootstrap.min.js',
 
 				'/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0',
 				'/ng-sortable/dist/ng-sortable.min.js',
@@ -38,7 +38,7 @@ this.addEventListener('install', function(event) {
 				'/angular-ui-router/release/angular-ui-router.js',
 				'/angular-ui-bootstrap/ui-bootstrap.js',
 				'/angular-ui-bootstrap/ui-bootstrap-tpls.js',
-				'/socket.io-client/socket.io.js',
+				'/socket.io-client/dist/socket.io.js',
 				'/main.js',
 
 				// template files

@@ -1,5 +1,5 @@
 app.factory('FormTemplatesFactory', function(DatabaseFactory) {
-  var db = DatabaseFactory.getLocalDb();
+  let db = DatabaseFactory.getLocalDb();
 
   return {
     fetchAll: function() {
@@ -27,7 +27,7 @@ app.factory('FormTemplatesFactory', function(DatabaseFactory) {
     },
 
     createForm: function() {
-        var form = {
+        let form = {
             title: "Example Title",
             description: "Example description",
             type: "formTemplate",

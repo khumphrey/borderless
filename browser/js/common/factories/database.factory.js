@@ -1,9 +1,9 @@
 app.factory('DatabaseFactory', function($window) {
-	var PouchDB = $window.PouchDB;
-	var localDb = new PouchDB('thekraken-test');
-	var usersDb = new PouchDB('users');
-	var remoteDb = new PouchDB('https://rekad.cloudant.com/thekraken-test', {skipSetup: true});
-	var output;
+	let PouchDB = $window.PouchDB;
+	let localDb = new PouchDB('thekraken-test');
+	let usersDb = new PouchDB('users');
+	let remoteDb = new PouchDB('https://rekad.cloudant.com/thekraken-test', {skipSetup: true});
+	let output;
 
 	return {
 		getLocalDb: function() {
