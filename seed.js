@@ -284,6 +284,8 @@ var formTemplates = [{
 var cradle = require('cradle');
 var dbName = "thekraken-test";
 
+// Bord3rl3ss!
+
 var connection = new(cradle.Connection)('https://couch.io', 443, {
      auth: { username: 'john', password: 'fha82l' }
  });
