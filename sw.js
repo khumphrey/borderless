@@ -1,6 +1,7 @@
+console.log('?!')
 self.addEventListener('install', function(event) {
 	console.log('installing')
-// 	event.waitUntil(self.skipWaiting());
+	event.waitUntil(self.skipWaiting());
 	event.waitUntil(
 		caches.open('v1').then(function(cache) {
 			console.log('caching')
@@ -17,9 +18,10 @@ self.addEventListener('install', function(event) {
 				'/admin-lte/plugins/jQueryUI/jQuery-ui.min.js',
 				'/admin-lte/dist/js/adminlte.min.js',
 				'/admin-lte/dist/img/avatar3.png',
-				// '/admin-lte/bootstrap/js/bootstrap.min.js',
+				'https://code.jquery.com/jquery-3.3.1.min.js',
 
-				'/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0',
+				'/font-awesome/fonts/fontawesome-webfont.woff2',
+				'/font-awesome/fonts/fontawesome-webfont.woff',
 				'/ng-sortable/dist/ng-sortable.min.js',
 				'/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2',
 
