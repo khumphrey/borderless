@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/angular-ui-bootstrap/ui-bootstrap.js"></script>
     <script src="/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="/socket.io-client/socket.io.js"></script>
+    <script src="/socket.io-client/dist/socket.io.js"></script>
     <script src="/main.js"></script>
     <script type="text/javascript">
     if ('serviceWorker' in navigator) {
@@ -89,19 +89,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
     <!-- jQuery 2.1.4 -->
-    <script src="admin-lte/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/admin-lte/plugins/jQueryUI/jQuery-ui.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="admin-lte/bootstrap/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="admin-lte/dist/js/app.min.js"></script>
+    <!-- <script src="/admin-lte/bootstrap/js/bootstrap.min.js"></script> -->
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. Slimscroll is required when using the
          fixed layout. -->
     <!-- Chart.js, needed for data visualization. -->
     <script src="angular-chart.js/dist/angular-chart.min.js"></script>
-    <script src="admin-lte/dist/js/app.min.js"></script>
     <script type="text/javascript" src="ng-sortable/dist/ng-sortable.min.js"></script>
+
+    <!-- AdminLTE App -->
+    <script src="/admin-lte/dist/js/adminlte.min.js"></script>
+
 </body>
 
 </html>

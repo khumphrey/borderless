@@ -287,7 +287,6 @@ var cradle = require('cradle');
 var connection = new(cradle.Connection)("http://rekad.cloudant.com", 5984);
 var db = connection.database("thekraken-test");
 
-
         db.save(formTemplates, function(err, res) {
             if (err) console.log('Error while seeding database', err);
             else console.log('Seeding of form templates successful', res);
