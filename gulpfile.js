@@ -25,9 +25,9 @@ gulp.task('reload', function () {
     livereload.reload();
 });
 
-gulp.task('reloadCSS', function () {
-    return gulp.src('./public/style.css').pipe(livereload());
-});
+// gulp.task('reloadCSS', function () {
+//     return gulp.src('./public/style.css').pipe(livereload());
+// });
 
 gulp.task('lintJS', function () {
 
@@ -139,9 +139,9 @@ gulp.task('default', function () {
     });
 
     // Run when anything inside of browser/scss changes.
-    gulp.watch('browser/scss/**', function () {
-        runSeq('buildCSS', 'reloadCSS');
-    });
+    // gulp.watch('browser/scss/**', function () {
+    //     runSeq('buildCSS', 'reloadCSS');
+    // });
 
     gulp.watch('server/**/*.js', ['lintJS']);
 
