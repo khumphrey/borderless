@@ -11,7 +11,7 @@ let createApplication = function () {
 
 let startServer = function () {
 
-    let PORT = process.env.PORT || 1337;
+    let PORT = process.env.PORT || 8081;
 
     server.listen(PORT, function () {
         console.log(chalk.blue('Server started on port', chalk.magenta(PORT)));
