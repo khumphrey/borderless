@@ -5,9 +5,9 @@ var runSeq = require('run-sequence');
 var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
-var sass = require('gulp-sass');
+// var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
-var minifyCSS = require('gulp-minify-css');
+// var minifyCSS = require('gulp-minify-css');
 var ngAnnotate = require('gulp-ng-annotate');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
@@ -82,30 +82,30 @@ gulp.task('testBrowserJS', function (done) {
     }, done);
 });
 
-gulp.task('buildCSS', function () {
+// gulp.task('buildCSS', function () {
 
-    var sassCompilation = sass();
-    sassCompilation.on('error', console.error.bind(console));
+//     var sassCompilation = sass();
+//     sassCompilation.on('error', console.error.bind(console));
 
-    return gulp.src('./browser/scss/main.scss')
-        .pipe(plumber({
-            errorHandler: notify.onError('SASS processing failed! Check your gulp process.')
-        }))
-        .pipe(sassCompilation)
-        .pipe(rename('style.css'))
-        .pipe(gulp.dest('./public'));
-});
+//     return gulp.src('./browser/scss/main.scss')
+//         .pipe(plumber({
+//             errorHandler: notify.onError('SASS processing failed! Check your gulp process.')
+//         }))
+//         .pipe(sassCompilation)
+//         .pipe(rename('style.css'))
+//         .pipe(gulp.dest('./public'));
+// });
 
 // Production tasks
 // --------------------------------------------------------------
 
-gulp.task('buildCSSProduction', function () {
-    return gulp.src('./browser/scss/main.scss')
-        .pipe(sass())
-        .pipe(rename('style.css'))
-        .pipe(minifyCSS())
-        .pipe(gulp.dest('./public'))
-});
+// gulp.task('buildCSSProduction', function () {
+//     return gulp.src('./browser/scss/main.scss')
+//         .pipe(sass())
+//         .pipe(rename('style.css'))
+//         .pipe(minifyCSS())
+//         .pipe(gulp.dest('./public'))
+// });
 
 gulp.task('buildJSProduction', function () {
     return gulp.src(['./browser/js/app.js', './browser/js/**/*.js'])
@@ -123,9 +123,9 @@ gulp.task('buildProduction', ['buildCSSProduction', 'buildJSProduction']);
 
 gulp.task('build', function () {
     if (process.env.NODE_ENV === 'production') {
-        runSeq(['buildJSProduction', 'buildCSSProduction']);
+        runSeq(['buildJSProduction'/*, 'buildCSSProduction'*/]);
     } else {
-        runSeq(['buildJS', 'buildCSS']);
+        runSeq(['buildJS'/*, 'buildCSS'*/]);
     }
 });
 
